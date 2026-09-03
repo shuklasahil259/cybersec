@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== SEO ===== -->
+  <title>[Your Name] | Cybersecurity Student &amp; Aspiring Security Professional</title>
+  <meta name="description" content="Portfolio of [Your Name], a B.Tech Cybersecurity student learning ethical hacking, web security, Linux, networking, SOC and cloud security — with labs, projects, notes and certificates.">
+  <meta name="author" content="[Your Name]">
+  <meta name="theme-color" content="#04100c">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="[Your Name] | Cybersecurity Student &amp; Aspiring Security Professional">
+  <meta property="og:description" content="Actively learning, practicing and building toward a professional cybersecurity career.">
+  <meta property="og:image" content="assets/img/og-cover.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Your Name] | Cybersecurity Student &amp; Aspiring Security Professional">
+  <meta name="twitter:description" content="Actively learning, practicing and building toward a professional cybersecurity career.">
+  <meta name="twitter:image" content="assets/img/og-cover.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <!-- Security: no external requests; content is static + config-driven.
+       Inline styles come only from this site's own code (accent colors on generated cards). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https: mailto:">
+
+  <!-- Styles (separated from markup) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Personal data (edit this file first) then behaviour -->
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#home">Skip to main content</a>
+
+  <!-- ===== Ambient effects (subtle, decorative) ===== -->
+  <div class="cyber-grid" aria-hidden="true"></div>
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===== Page loader ===== -->
+  <div class="boot-screen" id="bootScreen" role="status" aria-label="Loading">
+    <div class="boot-box">
+      <p class="boot-logo">&#62;_ CYBERSEC</p>
+      <div class="boot-lines" id="bootLines" aria-hidden="true"></div>
+      <div class="boot-bar"><span id="bootBarFill"></span></div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <button id="backTop" class="icon-btn back-top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- ===== Navigation ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="Go to top — CYBERSEC portfolio">
+        <span class="logo-mark" aria-hidden="true">&#62;_</span>CYBERSEC
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <ul id="navList"><!-- nav items rendered by main.js --></ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== 1. Hero ===== -->
+    <section class="hero section" id="home" aria-label="Introduction">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="status-badge" id="heroStatus"><span class="pulse-dot" aria-hidden="true"></span><span id="heroStatusText"></span></p>
+
+          <h1 class="hero-title">
+            Hi, I&rsquo;m <span class="accent-name" id="heroName"></span>
+          </h1>
+          <p class="hero-role" id="heroRole"></p>
+          <p class="hero-sub" id="heroSub"></p>
+
+          <p class="hero-typed">
+            <span class="typed-prefix" aria-hidden="true">&gt; </span>
+            <span id="typedLine" aria-live="off"></span><span class="typed-cursor" aria-hidden="true"></span>
+          </p>
+
+          <div class="hero-cta" id="heroCta"></div>
+        </div>
+
+        <div class="hero-visual" id="heroVisual">
+          <!-- terminal + orbit stats rendered by main.js -->
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#about" aria-label="Scroll to About section">
+        <span>scroll</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- ===== 2. About ===== -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">whoami</p>
+          <h2 class="section-title" id="aboutTitle">About <span class="accent">Me</span></h2>
+          <p class="section-sub">A quick introduction, my learning philosophy and where this journey is heading.</p>
+        </header>
+
+        <div class="about-layout">
+          <div class="about-main">
+            <div class="glass-card about-card reveal">
+              <div class="about-profile" id="aboutProfile"></div>
+              <div id="aboutIntro"></div>
+              <div class="about-details">
+                <div class="detail-block" id="aboutGoals"></div>
+                <div class="detail-block" id="aboutPhilosophy"></div>
+                <div class="detail-block" id="aboutObjectives"></div>
+              </div>
+              <div class="about-tags" id="aboutTags"></div>
+            </div>
+            <div class="quick-facts glass-card reveal" id="quickFacts" aria-label="Quick facts"></div>
+          </div>
+
+          <div class="about-journey">
+            <h3 class="block-title reveal">My Cybersecurity Journey</h3>
+            <p class="block-sub reveal">Every path starts with a single command.</p>
+            <ol class="journey-timeline" id="journeyTimeline"><!-- timeline items rendered by main.js --></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Education ===== -->
+    <section class="section" id="education" aria-labelledby="educationTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">education</p>
+          <h2 class="section-title" id="educationTitle">Education</h2>
+          <p class="section-sub">Formal study is the foundation my security skills are built on.</p>
+        </header>
+        <div class="edu-grid">
+          <div class="glass-card edu-card reveal">
+            <div class="edu-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></svg>
+            </div>
+            <div id="eduBody"></div>
+          </div>
+          <div class="edu-timeline reveal" id="eduTimeline" aria-label="Education timeline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. Skills ===== -->
+    <section class="section" id="skills" aria-labelledby="skillsTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">skill matrix</p>
+          <h2 class="section-title" id="skillsTitle">Cybersecurity <span class="accent">Skills</span></h2>
+          <p class="section-sub">What I am actively learning and practicing — honest, student-level progress bars.</p>
+        </header>
+        <div class="skills-grid" id="skillsGrid"><!-- skill groups rendered by main.js --></div>
+        <p class="disclaimer reveal" id="skillsDisclaimer"></p>
+      </div>
+    </section>
+
+    <!-- ===== 5. Tools ===== -->
+    <section class="section" id="tools" aria-labelledby="toolsTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">arsenal</p>
+          <h2 class="section-title" id="toolsTitle">Tools &amp; <span class="accent">Technologies</span></h2>
+          <p class="section-sub">The tools I train with in labs — click any tool to see what it does and what I learned.</p>
+        </header>
+        <div id="toolsBody"><!-- tool groups rendered by main.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== 6. Projects ===== -->
+    <section class="section" id="projects" aria-labelledby="projectsTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">build log</p>
+          <h2 class="section-title" id="projectsTitle">Security <span class="accent">Projects</span></h2>
+          <p class="section-sub">Hands-on labs and tools I have built while learning. Sample data — replace with your own.</p>
+        </header>
+
+        <div class="filter-bar reveal" id="projectFilters" role="group" aria-label="Filter projects by category"></div>
+        <div class="project-grid" id="projectGrid"></div>
+        <p class="empty-state" id="projectsEmpty" hidden>No projects in this category yet.</p>
+      </div>
+    </section>
+
+    <!-- ===== 7. Labs ===== -->
+    <section class="section" id="labs" aria-labelledby="labsTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">field training</p>
+          <h2 class="section-title" id="labsTitle">Cybersecurity <span class="accent">Labs</span></h2>
+          <p class="section-sub">Practical rooms and challenges completed on training platforms — plus my own lab setups.</p>
+        </header>
+
+        <div class="lab-profiles reveal" id="labProfiles"></div>
+        <div class="lab-table reveal" id="labList" role="table" aria-label="Security labs"></div>
+      </div>
+    </section>
+
+    <!-- ===== 8. Certificates ===== -->
+    <section class="section" id="certificates" aria-labelledby="certificatesTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">verification</p>
+          <h2 class="section-title" id="certificatesTitle">Certificates</h2>
+          <p class="section-sub">Course completions and learning paths earned along the way.</p>
+        </header>
+
+        <div class="filter-bar reveal" id="certFilters" role="group" aria-label="Filter certificates by category"></div>
+        <div class="cert-grid" id="certGrid"></div>
+        <p class="empty-state" id="certsEmpty" hidden>No certificates in this category yet.</p>
+      </div>
+    </section>
+
+    <!-- ===== 9. Learning dashboard ===== -->
+    <section class="section" id="learning" aria-labelledby="learningTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">progress report</p>
+          <h2 class="section-title" id="learningTitle">Learning <span class="accent">Dashboard</span></h2>
+          <p class="section-sub">A live view of topics completed, in progress and planned.</p>
+        </header>
+
+        <div class="metric-strip reveal" id="metricStrip"><!-- counters rendered by main.js --></div>
+        <div class="learning-topics" id="learningTopics"><!-- topic cards rendered by main.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== 10. Roadmap ===== -->
+    <section class="section" id="roadmap" aria-labelledby="roadmapTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">career map</p>
+          <h2 class="section-title" id="roadmapTitle">Career <span class="accent">Roadmap</span></h2>
+          <p class="section-sub">The structured path I am following from foundations to a professional security career.</p>
+        </header>
+        <div class="roadmap-flow" id="roadmapFlow"><!-- stages rendered by main.js --></div>
+        <h3 class="block-title reveal">Possible Career Paths</h3>
+        <div class="career-grid" id="careerGrid"><!-- expandable career cards rendered by main.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== 11. Blog / notes ===== -->
+    <section class="section" id="blog" aria-labelledby="blogTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">knowledge base</p>
+          <h2 class="section-title" id="blogTitle">Security <span class="accent">Notes</span></h2>
+          <p class="section-sub">Notes and write-ups I publish while learning — explaining things is how I master them.</p>
+        </header>
+        <div class="blog-grid" id="blogGrid"><!-- posts rendered by main.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== 12. GitHub ===== -->
+    <section class="section" id="github" aria-labelledby="githubTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">open source</p>
+          <h2 class="section-title" id="githubTitle">GitHub <span class="accent">Showcase</span></h2>
+          <p class="section-sub">Where my learning becomes public code. Placeholder profile data — connect your real account.</p>
+        </header>
+        <div class="github-layout">
+          <div class="gh-profile glass-card reveal" id="ghProfile"></div>
+          <div class="gh-repos" id="ghRepos"><!-- featured repos rendered by main.js --></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 13. Achievements ===== -->
+    <section class="section" id="achievements" aria-labelledby="achievementsTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">milestones</p>
+          <h2 class="section-title" id="achievementsTitle">Achievements</h2>
+          <p class="section-sub">Milestones, competitions and wins along the learning curve.</p>
+        </header>
+        <div class="achievement-grid" id="achievementGrid"><!-- cards rendered by main.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== 14. Resume ===== -->
+    <section class="section" id="resume" aria-labelledby="resumeTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">cv.dat</p>
+          <h2 class="section-title" id="resumeTitle">My <span class="accent">Resume</span></h2>
+          <p class="section-sub">A summary of my profile — view it on screen or download the PDF.</p>
+        </header>
+        <div class="resume-layout">
+          <div class="resume-preview glass-card reveal" id="resumePreview"><!-- resume rendered by main.js --></div>
+          <div class="resume-actions reveal">
+            <button type="button" class="btn btn-primary btn-block" id="resumeDownload">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+              Download Resume
+            </button>
+            <button type="button" class="btn btn-ghost btn-block" id="resumeView">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              View Resume
+            </button>
+            <p class="hint-note" id="resumeHint"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 15. Contact ===== -->
+    <section class="section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">transmit</p>
+          <h2 class="section-title" id="contactTitle">Get In <span class="accent">Touch</span></h2>
+          <p class="section-sub">Questions, internships, projects or just to talk security — my inbox is open.</p>
+        </header>
+
+        <div class="contact-layout">
+          <div class="glass-card contact-info reveal">
+            <h3 class="block-title">Direct channels</h3>
+            <ul class="contact-list" id="contactList"></ul>
+            <div class="contact-note" id="contactNote"></div>
+          </div>
+
+          <form class="glass-card contact-form reveal" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" autocomplete="name" maxlength="120" required>
+                <p class="field-error" id="err-name" hidden></p>
+              </div>
+              <div class="form-field">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="email" autocomplete="email" maxlength="160" required>
+                <p class="field-error" id="err-email" hidden></p>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" maxlength="180" required>
+              <p class="field-error" id="err-subject" hidden></p>
+            </div>
+            <div class="form-field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" maxlength="2000" required></textarea>
+              <p class="field-error" id="err-message" hidden></p>
+            </div>
+
+            <!-- Honeypot: hidden from humans, bots fill it in -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="cf-website">Leave this field empty</label>
+              <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
+            <button type="submit" class="btn btn-primary btn-block" id="cf-send">
+              Send Message
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Back to top">
+          <span class="logo-mark" aria-hidden="true">&#62;_</span>CYBERSEC
+        </a>
+        <p id="footerDesc"></p>
+      </div>
+      <nav class="footer-col" aria-label="Footer — quick links">
+        <h3>Quick Links</h3>
+        <ul id="footerLinks"><!-- rendered by main.js --></ul>
+      </nav>
+      <nav class="footer-col" aria-label="Footer — social links">
+        <h3>Connect</h3>
+        <ul id="footerSocial"></ul>
+      </nav>
+      <div class="footer-col">
+        <h3>Status</h3>
+        <ul class="footer-status">
+          <li><span class="pulse-dot" aria-hidden="true"></span> Open to internships</li>
+          <li id="footerLocation"></li>
+          <li id="footerEmail"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p id="copyright"></p>
+        <p class="footer-sec" aria-hidden="true">built with HTML + CSS + JS — no tracking, no secrets</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Shared modal (tool info / cert lightbox / article reader) ===== -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" id="modalBox" aria-label="Details dialog">
+      <button type="button" class="modal-close icon-btn" id="modalClose" aria-label="Close dialog">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div id="modalContent"><!-- content injected per modal type --></div>
+    </div>
+  </div>
+</body>
+</html>
