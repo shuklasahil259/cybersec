@@ -50,8 +50,8 @@ window.SITE_DATA = {
 
     /* Profile photo: point to assets/img/profile.jpg (square, ~500px).
        Leave "" to use a clean monogram avatar instead. */
-    profileImage: "",
-    profileImageAlt: "",                   // describe the photo if you add one
+    profileImage: "assets/img/img.png",
+    profileImageAlt: "assets/img/img.png",                   // describe the photo if you add one
 
     /* Subtitle under the name in the hero */
     heroStatusText: "Currently Learning Cybersecurity",
