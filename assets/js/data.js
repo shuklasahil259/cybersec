@@ -33,18 +33,18 @@ window.SITE_DATA = {
      1. PERSONAL DETAILS  — change everything about YOU here
      ========================================================= */
   config: {
-    name: "[Your Name]",
-    firstName: "YourName",                 // used for the monogram avatar
+    name: "Shukla Sahil",
+    firstName: "Sahil Shukla",                 // used for the monogram avatar
     role: "Cybersecurity Student & Aspiring Security Professional",
     headline: "B.Tech Computer Science (Cybersecurity) Student",
-    location: "Your City, India",
-    email: "your.email@example.com",
+    location: "Haridwar, India",
+    email: "shuklasahil259.com",
 
     /* Link URLs — replace with your real profiles */
-    githubUsername: "your-github-username",
-    githubUrl: "https://github.com/your-github-username",
+    githubUsername: "shuklasahil259",
+    githubUrl: "https://github.com/shuklasahil259",
     linkedinUrl: "https://www.linkedin.com/in/your-linkedin-username",
-    tryhackmeUrl: "https://tryhackme.com/p/your-thm-username",
+    tryhackmeUrl: "https://tryhackme.com/p/shuklasahil259",
     hacktheboxUrl: "https://app.hackthebox.com/profile/your-id",
     ctfTimeUrl: "https://ctftime.org/team/your-team-id",
 
@@ -176,8 +176,8 @@ window.SITE_DATA = {
   education: {
     degree: "Bachelor of Technology (B.Tech)",
     branch: "Computer Science & Engineering",
-    university: "Your University / College Name",
-    semester: "Semester 6 of 8",
+    university: "Gurukula Kangri (Deemed to be University) - GK(DU) / Faculty of Engineering and Technology",
+    semester: "Semester 7 of 8",
     graduation: "Expected Graduation: 2027",
 
     relevantSubjects: [
@@ -188,18 +188,18 @@ window.SITE_DATA = {
 
     details: [
       { label: "Branch",      value: "Computer Science & Engineering" },
-      { label: "University",  value: "Your University / College Name" },
-      { label: "Semester",    value: "Semester 6 of 8" },
+      { label: "University",  value: "Gurukula Kangri (Deemed to be University) - GK(DU) / Faculty of Engineering and Technology" },
+      { label: "Semester",    value: "Semester 7 of 8" },
       { label: "Graduation",  value: "Expected 2027" },
     ],
 
     /* Timeline of the academic journey (newest on top is fine) */
     timeline: [
-      { period: "2023 – 2027", title: "B.Tech in Computer Science & Engineering", org: "Your University / College Name",
+      { period: "2023 – 2027", title: "B.Tech in Computer Science & Engineering", org: "Gurukula Kangri (Deemed to be University) - GK(DU) / Faculty of Engineering and Technology",
         note: "Focused on core CS with an eye on security: networks, OS, DBMS and cryptography." },
       { period: "2024", title: "Self-driven Cybersecurity Track", org: "TryHackMe · HTB · online courses",
         note: "Linux, networking, web security and offensive/defensive practice in legal labs." },
-      { period: "2019 – 2023", title: "Higher Secondary School", org: "Your School Name",
+      { period: "2019 – 2023", title: "Higher Secondary School", org: "Sri Guru Ram Rai Public School",
         note: "Science stream — Mathematics, Physics and Computer Science." },
     ],
   },
@@ -502,11 +502,11 @@ window.SITE_DATA = {
      pct: how far along the topic you are
      ========================================================= */
   learningTopics: [
-    { name: "Linux",             icon: "", status: "Completed", pct: 100, detail: "Command line, users, permissions, services" },
-    { name: "Networking",        icon: "", status: "Completed", pct: 100, detail: "TCP/IP, DNS, HTTP, ports and protocols" },
+    { name: "Linux",             icon: "", status: "Completed", pct: 50, detail: "Command line, users, permissions, services" },
+    { name: "Networking",        icon: "", status: "Completed", pct: 65, detail: "TCP/IP, DNS, HTTP, ports and protocols" },
     { name: "Python",            icon: "", status: "Learning",  pct: 60,  detail: "Automation scripts and small security tools" },
     { name: "Web Security",      icon: "", status: "Learning",  pct: 45,  detail: "OWASP Top 10, Burp Suite practice" },
-    { name: "Ethical Hacking",   icon: "", status: "Learning",  pct: 35,  detail: "Recon, scanning, exploitation in labs" },
+    { name: "Ethical Hacking",   icon: "", status: "Learning",  pct: 15,  detail: "Recon, scanning, exploitation in labs" },
     { name: "Cloud Security",    icon: "", status: "Planned",   pct: 5,   detail: "AWS, IAM, security groups" },
   ],
 
